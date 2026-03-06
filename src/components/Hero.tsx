@@ -58,9 +58,12 @@ const Hero = () => {
             </h1>
 
             {/* Typing Effect */}
-            <div className="h-8 md:h-12 mb-8 md:mb-12 opacity-0 animate-[fade-in-up_0.8s_ease-out_0.6s_forwards]">
-              <span className="text-xl md:text-3xl text-muted-foreground font-light tracking-wide">
-                I build <span className="font-mono font-medium text-primary bg-primary/10 px-2 py-1 rounded-md border border-primary/20">{typedText}</span><span className="typing-cursor ml-1 animate-pulse">&nbsp;</span>
+            <div className="h-8 md:h-12 mb-8 md:mb-12 opacity-0 animate-[fade-in-up_0.8s_ease-out_0.6s_forwards] flex items-center justify-center lg:justify-start gap-2">
+              <span className="text-xl md:text-3xl font-light tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-muted-foreground to-foreground/80">
+                Crafting
+              </span>
+              <span className="text-xl md:text-3xl font-mono font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-md border border-primary/20 shadow-[0_0_15px_rgba(0,255,255,0.1)]">
+                {typedText}<span className="typing-cursor ml-1 animate-pulse">&nbsp;</span>
               </span>
             </div>
 
@@ -68,7 +71,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto opacity-0 animate-[fade-in-up_0.8s_ease-out_0.8s_forwards]">
               <a
                 href="#projects"
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all duration-300 hover:scale-105"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-background font-bold text-lg hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all duration-300 hover:scale-105"
               >
                 View Projects
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -106,12 +109,12 @@ const Hero = () => {
                 <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-background relative z-10">
 
                   {/* Glass overlay on hover */}
-                  <div className="absolute inset-0 bg-primary/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
+                  <div className="absolute inset-0 bg-primary/10 backdrop-blur-[1px] mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
 
                   <img
                     src="/Profile/ME.jpeg"
                     alt="Aman Kumar Dhar"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                       (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-zinc-900 text-primary font-heading font-black text-6xl md:text-8xl">AKD</div>';
