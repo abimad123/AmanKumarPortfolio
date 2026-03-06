@@ -1,7 +1,7 @@
 import { useTypingEffect } from "@/hooks/useTypingEffect";
 import { ArrowDown, Download, Mail, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import DroneSwarmCanvas from "@/components/ui/DroneSwarmCanvas";
+import WaveNetCanvas from "@/components/ui/WaveNetCanvas";
 
 const typingWords = [
   "Autonomous Drones & UAVs",
@@ -15,15 +15,16 @@ const Hero = () => {
   const typedText = useTypingEffect(typingWords, 80, 40, 1500);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
       {/* Background Elements */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity"
+        className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-luminosity"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-background z-[1]" />
 
-      {/* Drone Animation Layer */}
-      <DroneSwarmCanvas />
+      {/* 3D Wave Particle Layer */}
+      <WaveNetCanvas />
 
       {/* Dynamic Gradients */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] pointer-events-none animate-[pulse_8s_ease-in-out_infinite]" />
@@ -52,18 +53,18 @@ const Hero = () => {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black mb-4 leading-tight opacity-0 animate-[fade-in-up_0.8s_ease-out_0.4s_forwards]">
               <span className="text-foreground">Aman </span>
               <span className="relative inline-block">
-                <span className="neon-text relative z-10 whitespace-nowrap">Kumar Dhar</span>
+                <span className="relative z-10 whitespace-nowrap">Kumar Dhar</span>
                 <span className="absolute -bottom-2 left-0 w-full h-[6px] bg-primary/60 blur-[4px] -z-10 rounded-full"></span>
               </span>
             </h1>
 
             {/* Typing Effect */}
             <div className="h-8 md:h-12 mb-8 md:mb-12 opacity-0 animate-[fade-in-up_0.8s_ease-out_0.6s_forwards] flex items-center justify-center lg:justify-start gap-2">
-              <span className="text-xl md:text-3xl font-light tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-muted-foreground to-foreground/80">
+              <span className="text-xl md:text-3xl font-light tracking-wide text-white">
                 Crafting
               </span>
-              <span className="text-xl md:text-3xl font-mono font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-md border border-primary/20 shadow-[0_0_15px_rgba(0,255,255,0.1)]">
-                {typedText}<span className="typing-cursor ml-1 animate-pulse">&nbsp;</span>
+              <span className="text-xl md:text-3xl font-mono font-medium text-white bg-white/10 px-3 py-1.5 rounded-md border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                {typedText}<span className="typing-cursor ml-1 animate-pulse border-white">&nbsp;</span>
               </span>
             </div>
 
